@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ThemeRepository::class)
+ * @ORM\Table(name="tbl_theme")
  */
 class Theme
 {
@@ -114,5 +115,9 @@ class Theme
         $this->user = $user;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->sujet;
     }
 }
